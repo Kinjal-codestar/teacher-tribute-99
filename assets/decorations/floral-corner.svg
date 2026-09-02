@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <path d="M5 95C25 80 40 60 45 35C48 20 45 10 35 5C25 0 15 10 20 25C25 40 45 45 60 45C75 45 90 35 95 20" stroke="var(--color-sage, #A8B89A)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M45 35C52 28 62 25 70 28C72 35 65 42 55 40" fill="var(--color-pink, #E8C9C9)" opacity="0.7"/>
+  <circle cx="70" cy="28" r="2.5" fill="var(--color-gold, #C9A45C)"/>
+  <path d="M25 65C32 58 40 58 44 65C40 70 32 72 25 65Z" fill="var(--color-sage, #A8B89A)" opacity="0.5"/>
+</svg>

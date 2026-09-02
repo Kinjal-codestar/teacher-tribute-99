@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 32" fill="none" class="botanical-flourish">
+  <!-- Central delicate botanical branch with leaves and gold pistil -->
+  <path d="M10 16C35 16 50 11 68 15.5C86 11 105 16 130 16" stroke="var(--color-sage, #A8B89A)" stroke-width="1.2" stroke-linecap="round" opacity="0.75"/>
+  <path d="M52 14C46 9 38 10 34 14C40 16 48 16 52 14Z" fill="var(--color-sage, #A8B89A)" opacity="0.45"/>
+  <path d="M88 14C94 9 102 10 106 14C100 16 92 16 88 14Z" fill="var(--color-sage, #A8B89A)" opacity="0.45"/>
+  <path d="M60 15C56 10 50 11 48 15C52 17 58 17 60 15Z" fill="var(--color-pink, #E8C9C9)" opacity="0.6"/>
+  <path d="M80 15C84 10 90 11 92 15C88 17 82 17 80 15Z" fill="var(--color-pink, #E8C9C9)" opacity="0.6"/>
+  <circle cx="70" cy="15.5" r="2.8" fill="var(--color-gold, #C9A45C)"/>
+  <circle cx="70" cy="15.5" r="5.5" stroke="var(--color-gold, #C9A45C)" stroke-width="0.8" stroke-dasharray="1.5 1.5" opacity="0.6"/>
+</svg>

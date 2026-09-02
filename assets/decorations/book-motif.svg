@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Delicate Gold Ring -->
+  <circle cx="32" cy="32" r="28" stroke="var(--color-gold, #C9A45C)" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.65"/>
+  <circle cx="32" cy="32" r="24" fill="var(--color-pink-soft, #F8EFEF)" opacity="0.6"/>
+  <!-- Minimal Open Book -->
+  <path d="M18 39C22 36.5 27 36 32 37.5C37 36 42 36.5 46 39V23C42 20.5 37 20 32 21.5C27 20 22 20.5 18 23V39Z" fill="var(--color-surface, #FFFDF8)" stroke="var(--color-maroon, #7A3040)" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M32 21.5V37.5" stroke="var(--color-gold, #C9A45C)" stroke-width="1"/>
+  <!-- Botanical Sprout -->
+  <path d="M32 21.5C32 17 30 13.5 26.5 12C26.5 15.5 29 18 32 21.5Z" fill="var(--color-sage, #A8B89A)" opacity="0.85"/>
+  <path d="M32 21.5C32 16.5 34.5 13 38 11.5C37.5 15 35.5 18 32 21.5Z" fill="var(--color-sage, #A8B89A)" opacity="0.85"/>
+  <circle cx="32.5" cy="10.5" r="2" fill="var(--color-gold, #C9A45C)"/>
+</svg>

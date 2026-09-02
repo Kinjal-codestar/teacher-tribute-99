@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 70" fill="none" class="signature-svg">
+  <path class="sig-path" d="M15 45 C 35 15, 45 10, 60 30 C 70 45, 80 50, 95 35 C 110 20, 115 15, 125 38 C 130 50, 140 52, 155 35 C 170 18, 185 22, 195 42 C 205 60, 220 55, 245 40" stroke="var(--color-maroon, #7A3040)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path class="sig-line" d="M10 58 C 70 54, 150 56, 250 52" stroke="var(--color-gold, #C9A45C)" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
+  <circle cx="253" cy="52" r="2" fill="var(--color-gold, #C9A45C)"/>
+</svg>

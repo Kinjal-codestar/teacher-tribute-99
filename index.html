@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <title>Happy Teachers' Day • ডিজিটাল শ্রদ্ধার্ঘ্য</title>
+  <meta name="description" content="শ্রদ্ধেয় শিক্ষকের জন্য একটি বিশেষ শিক্ষক দিবস উপহার ও ডিজিটাল শ্রদ্ধার্ঘ্য।" />
+
+  <!-- Preload Critical Portrait Image -->
+  <link rel="preload" as="image" href="assets/images/teacher.jpg" />
+
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400;1,600&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700;800&family=Cinzel:wght@600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Swiper.js Carousel CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Unified Luxury Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-theme="sunset-bloom">
+
+  <!-- Custom Luxury Magnetic Cursor (Desktop) -->
+  <div class="custom-cursor-dot" id="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" id="custom-cursor-ring" aria-hidden="true"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Ambient Golden Stardust Interactive Canvas -->
+  <canvas id="ambient-particle-canvas" class="ambient-particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Petal Shower Full-Screen Overlay -->
+  <div class="petal-shower-overlay" id="petal-shower-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Background Glow & Decorative Elements -->
+  <div class="bg-decorations" aria-hidden="true">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+  </div>
+
+  <!-- ============================================================
+       FLOATING LUXURY GLASS DOCK (Top Quick Controls)
+       ============================================================ -->
+  <nav class="luxury-dock" id="luxury-dock" aria-label="Quick Controls">
+    <!-- Theme Switcher Button -->
+    <div class="dock-item-wrap">
+      <button class="dock-btn" id="dock-theme-btn" aria-label="Change Color Theme" title="Choose Luxury Theme" aria-haspopup="true" aria-expanded="false">
+        <span class="dock-icon">🎨</span>
+        <span class="dock-tooltip">Themes</span>
+      </button>
+      
+      <!-- Theme Selection Floating Menu -->
+      <div class="theme-dropdown-menu" id="theme-dropdown" role="menu" aria-hidden="true">
+        <div class="theme-dropdown-header">
+          <span>পছন্দের থিম নির্বাচন করুন</span>
+        </div>
+        <div class="theme-options-list" id="theme-options-list">
+          <!-- Dynamically populated from config.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Audio Equalizer / Music Control -->
+    <div class="dock-item-wrap">
+      <button class="dock-btn dock-music-btn" id="dock-music-btn" aria-label="Toggle Background Melody" title="Toggle Melody">
+        <div class="dock-eq-bars" id="dock-eq-bars" aria-hidden="true">
+          <span class="eq-bar"></span>
+          <span class="eq-bar"></span>
+          <span class="eq-bar"></span>
+          <span class="eq-bar"></span>
+          <span class="eq-bar"></span>
+        </div>
+        <span class="dock-tooltip" id="dock-music-tooltip">Melody On</span>
+      </button>
+    </div>
+
+    <!-- Petal Blessing Trigger -->
+    <div class="dock-item-wrap">
+      <button class="dock-btn dock-petal-btn" id="dock-petal-btn" aria-label="Trigger Petal Blessing Shower" title="Flower Blessing">
+        <span class="dock-icon pulse-flower">🌸</span>
+        <span class="dock-tooltip">পুষ্পার্ঘ্য</span>
+      </button>
+    </div>
+
+    <!-- Quick Share Button -->
+    <div class="dock-item-wrap">
+      <button class="dock-btn btn-open-share" id="dock-share-btn" aria-label="Share Tribute" title="Share Tribute">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="18" cy="5" r="3"></circle>
+          <circle cx="6" cy="12" r="3"></circle>
+          <circle cx="18" cy="19" r="3"></circle>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+        </svg>
+        <span class="dock-tooltip">Share</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       1. OPENING EXPERIENCE (Pinkish Rose Petal Bloom Curtain)
+       ============================================================ -->
+  <section id="opening-screen" role="dialog" aria-modal="true" aria-label="Opening Greeting">
+    <!-- Ambient Rose Backlight Glow -->
+    <div class="opening-ambient-glow" aria-hidden="true"></div>
+
+    <div class="opening-content">
+      <!-- Animated Pinkish Botanical Petal Illustration -->
+      <div class="opening-petal-container" id="opening-petal-container" aria-hidden="true">
+        <svg class="opening-petal-svg" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="rosePetalGrad" x1="15%" y1="10%" x2="85%" y2="90%">
+              <stop offset="0%" stop-color="#FFF0F3" />
+              <stop offset="25%" stop-color="#F7A8B8" />
+              <stop offset="60%" stop-color="#E25C76" />
+              <stop offset="100%" stop-color="#9C2742" />
+            </linearGradient>
+            <radialGradient id="rosePetalGlow" cx="45%" cy="32%" r="62%">
+              <stop offset="0%" stop-color="#FFF7F9" stop-opacity="0.92" />
+              <stop offset="45%" stop-color="#F8B7C5" stop-opacity="0.45" />
+              <stop offset="100%" stop-color="#A8324E" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="roseVeinGrad" x1="50%" y1="95%" x2="50%" y2="5%">
+              <stop offset="0%" stop-color="#8A2438" stop-opacity="0.75" />
+              <stop offset="50%" stop-color="#D97589" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="#FFD6DF" stop-opacity="0.2" />
+            </linearGradient>
+            <linearGradient id="roseHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+              <stop offset="55%" stop-color="#FFF2F5" stop-opacity="0.45" />
+              <stop offset="100%" stop-color="#E0627C" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <!-- Petal Body -->
+          <path class="petal-body" d="M40 92 C30 82 14 66 10 48 C6 30 15 12 30 5 C38 2 46 4 53 10 C65 18 70 36 65 55 C60 72 47 85 40 92 Z" fill="url(#rosePetalGrad)" />
+          <path class="petal-glow" d="M40 90 C32 80 17 65 13 48 C9 32 17 15 31 9 C38 6 45 8 52 13 C62 19 67 36 62 53 C58 70 46 83 40 90 Z" fill="url(#rosePetalGlow)" />
+          <!-- Rose Veins -->
+          <path d="M40 90 Q39 50 42 10" stroke="url(#roseVeinGrad)" stroke-width="1.4" stroke-linecap="round" />
+          <path d="M39.5 74 Q28 63 20 54" stroke="url(#roseVeinGrad)" stroke-width="0.85" stroke-linecap="round" />
+          <path d="M40 56 Q26 46 18 34" stroke="url(#roseVeinGrad)" stroke-width="0.8" stroke-linecap="round" />
+          <path d="M40.5 41 Q29 32 23 20" stroke="url(#roseVeinGrad)" stroke-width="0.75" stroke-linecap="round" />
+          <path d="M40 70 Q51 61 58 51" stroke="url(#roseVeinGrad)" stroke-width="0.85" stroke-linecap="round" />
+          <path d="M40.5 52 Q54 44 61 29" stroke="url(#roseVeinGrad)" stroke-width="0.8" stroke-linecap="round" />
+          <path d="M41.2 37 Q52 29 56 18" stroke="url(#roseVeinGrad)" stroke-width="0.75" stroke-linecap="round" />
+          <path d="M28 6 C36 3 44 5 51 9 C59 14 66 28 64 43" stroke="url(#roseHighlight)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+        </svg>
+      </div>
+
+      <!-- Opening Emotional Typography -->
+      <div class="opening-text-wrap">
+        <span class="opening-badge" id="opening-badge">🌸 শ্রদ্ধার্ঘ্য নিবেদন</span>
+        <h2 class="opening-text-1" id="opening-text-1">একটি ছোট্ট ধন্যবাদ…</h2>
+        <h3 class="opening-text-2" id="opening-text-2">একজন বিশেষ শিক্ষকের জন্য।</h3>
+      </div>
+
+      <!-- Subtle Progress Bar -->
+      <div class="opening-progress-track" aria-hidden="true">
+        <div class="opening-progress-fill" id="opening-progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Enter / Skip Experience Button -->
+    <button id="opening-skip" class="opening-skip-btn" aria-label="Skip intro animation">
+      <span>স্মৃতিতে প্রবেশ করুন</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </button>
+  </section>
+
+  <!-- ============================================================
+       MAIN CONTENT CONTAINER
+       ============================================================ -->
+  <main class="tribute-container" id="main-content">
+
+    <!-- 2. HERO SECTION -->
+    <header class="hero-section" id="hero">
+      <img src="assets/decorations/floral-hero.svg" alt="Floral Decoration" class="hero-flourish" />
+      
+      <div class="hero-badge-wrap">
+        <span class="hero-date-badge" id="hero-date-badge">৫ই সেপ্টেম্বর • শিক্ষক দিবস</span>
+      </div>
+
+      <h1 class="hero-greeting font-editorial shimmer-text" id="hero-greeting">Happy Teachers' Day</h1>
+
+      <!-- Teacher Portrait 3D Tilt Frame -->
+      <div class="hero-portrait-wrapper tilt-card" id="hero-portrait-card" data-tilt-max="14">
+        <div class="hero-portrait-frame">
+          <img id="hero-portrait-img" src="assets/images/teacher.jpg" alt="Teacher Portrait" />
+          <div class="card-glare" aria-hidden="true"></div>
+          <div class="photo-watermark" aria-hidden="true">© Kinjal Debnath</div>
+        </div>
+
+        <!-- Corner Ornate Accents -->
+        <img src="assets/decorations/floral-corner.svg" class="portrait-corner-flourish top-left" alt="" aria-hidden="true" />
+        <img src="assets/decorations/floral-corner.svg" class="portrait-corner-flourish bottom-right" alt="" aria-hidden="true" />
+
+        <!-- Gold Rotating Wax Stamp -->
+        <div class="portrait-stamp" aria-hidden="true" title="Special Teacher Tribute">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="gold-accent stamp-star-icon">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+          </svg>
+        </div>
+      </div>
+
+      <h2 class="hero-teacher-name font-bengali-title" id="hero-teacher-name">ডঃ অনিন্দিতা সেন</h2>
+      <p class="hero-teacher-title" id="hero-teacher-title">বাংলা ও সাহিত্য বিভাগ</p>
+      <p class="hero-tagline" id="hero-tagline">একটি সুন্দর জীবনের ভিত্তি গড়ে দিয়েছেন আপনি।</p>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span class="scroll-label">স্ক্রোল করুন</span>
+      </div>
+    </header>
+
+    <!-- 3. PERSONAL MESSAGE (Handwritten Parchment Card with Wax Seal) -->
+    <section class="personal-letter-section" id="letter" aria-labelledby="letter-salutation">
+      <article class="letter-wrapper tilt-card" id="letter-card" data-tilt-max="7">
+        <div class="card-glare" aria-hidden="true"></div>
+        
+        <div class="letter-header">
+          <span class="letter-heading-tag" id="letter-heading-tag">কিছু কথা, শুধু আপনার জন্য…</span>
+          <div class="letter-seal-wrapper" id="letter-seal-wrapper" role="button" tabindex="0" title="Click to Open Letter Seal" aria-label="Open letter seal">
+            <img src="assets/decorations/envelope-seal.svg" alt="Wax Seal" class="letter-seal" id="letter-seal-img" />
+            <span class="seal-glow-ring" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <h3 class="letter-salutation" id="letter-salutation">প্রিয় ম্যাম,</h3>
+        <div class="letter-body-wrap">
+          <p class="letter-body" id="letter-body">
+            ক্লাসরুমের সাধারণ চার দেওয়ালের মধ্যে আপনি শুধু বইয়ের পাতাই পড়াননি, শিখিয়েছেন কীভাবে স্বপ্ন দেখতে হয় এবং
+            সেই স্বপ্নের ওপর বিশ্বাস রাখতে হয়।
+          </p>
+        </div>
+        <p class="letter-footer-note" id="letter-footer-note">আপনার দেওয়া প্রতিটি শিক্ষা আমাদের জীবনের পাথেয় হয়ে থাকবে।</p>
+      </article>
+    </section>
+
+    <!-- 4. CINEMATIC PORTRAIT BANNER -->
+    <section class="cinematic-section" id="cinematic">
+      <div class="cinematic-card tilt-card" data-tilt-max="6">
+        <img id="cinematic-img" src="assets/images/cinematic-teacher.jpg" alt="Teacher Inspiration" class="cinematic-img" loading="lazy" />
+        <div class="card-glare" aria-hidden="true"></div>
+        <div class="cinematic-overlay">
+          <span class="cinematic-badge" id="cinematic-badge">The teacher who made a difference.</span>
+          <h3 class="cinematic-title font-bengali-title" id="cinematic-title">জ্ঞানের আলোয় জীবন গড়ার কারিগর</h3>
+          <div class="photo-watermark cinematic-watermark" aria-hidden="true">© Kinjal Debnath • 6297418445</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. MEMORY GALLERY SECTION -->
+    <section class="gallery-section" id="memories" aria-labelledby="gallery-heading">
+      <div class="section-header">
+        <h3 class="font-bengali-title maroon-accent gallery-title-text" id="gallery-heading">মধুর স্মৃতিমালা</h3>
+        <p class="section-subtitle" id="gallery-subtitle">যে মুহূর্তগুলো আমাদের হৃদয়ে চিরকাল অমলিন থাকবে</p>
+
+        <!-- Gallery View Switcher: Carousel vs Magazine Grid -->
+        <div class="gallery-view-switcher" role="radiogroup" aria-label="Gallery View Mode">
+          <button class="view-switch-btn active" id="view-mode-carousel" data-mode="carousel" aria-checked="true" aria-label="Switch to carousel slider">
+            <span>🎞️ স্লাইডার</span>
+          </button>
+          <button class="view-switch-btn" id="view-mode-magazine" data-mode="magazine" aria-checked="false" aria-label="Switch to magazine collage">
+            <span>🏛️ ম্যাগাজিন</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile & Interactive Swiper Carousel Slider -->
+      <div class="swiper gallery-swiper-container" id="gallery-carousel-view">
+        <div class="swiper-wrapper" id="swiper-wrapper">
+          <!-- Dynamically populated via JS from config.js -->
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="gallery-counter" id="gallery-counter" aria-hidden="true">01 / 05</div>
+      </div>
+
+      <!-- Desktop & Dynamic Magazine Grid Layout -->
+      <div class="gallery-desktop-grid" id="gallery-desktop-grid">
+        <!-- Dynamically populated via JS from config.js -->
+      </div>
+    </section>
+
+    <!-- 6. THANK YOU SECTION (Lush Sage & Emerald Gradient with Gratitude Cards) -->
+    <section class="thankyou-section" id="thankyou" aria-labelledby="thankyou-heading">
+      <!-- Top Organic Wave Transition -->
+      <div class="thankyou-wave-top" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0 C150,90 350,-40 500,60 C650,140 900,10 1200,40 L1200,0 L0,0 Z" fill="var(--color-bg)"></path>
+        </svg>
+      </div>
+
+      <div class="thankyou-container">
+        <span class="thankyou-badge" id="thankyou-badge">কৃতজ্ঞতা</span>
+        <h2 class="thankyou-heading font-editorial" id="thankyou-heading">Thank You, Teacher.</h2>
+        <div class="thankyou-lines" id="thankyou-lines">
+          <!-- Dynamically populated via JS from config.js -->
+        </div>
+        <div class="thankyou-gold-line" id="thankyou-gold-line" aria-hidden="true"></div>
+        <p class="thankyou-final" id="thankyou-final">Thank you for believing in us.</p>
+      </div>
+
+      <!-- Bottom Organic Wave Transition -->
+      <div class="thankyou-wave-bottom" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,120 C200,30 450,110 650,40 C850,-20 1050,70 1200,20 L1200,120 L0,120 Z" fill="var(--color-bg)"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 7. EMOTIONAL QUOTE SECTION -->
+    <section class="quote-section" id="quote" aria-label="Inspirational Quote">
+      <div class="quote-card tilt-card" data-tilt-max="7">
+        <div class="card-glare" aria-hidden="true"></div>
+        <img src="assets/decorations/gold-quotes.svg" alt="Quote" class="quote-mark" />
+        <blockquote class="quote-text" id="quote-text">
+          একজন শিক্ষক একটি জীবন বদলে দিতে পারেন, আর আপনি আমাদের গোটা পৃথিবীকে সুন্দর করে তুলেছেন।
+        </blockquote>
+        <div class="quote-author" id="quote-author">— আপনার স্নেহের ছাত্রছাত্রীবৃন্দ</div>
+        <div class="quote-subtext font-editorial" id="quote-subtext">Forever grateful for your light and wisdom.</div>
+      </div>
+    </section>
+
+    <!-- 8. STUDENT SIGNATURE SECTION -->
+    <section class="signature-section" id="signature" aria-label="Student Gratitude">
+      <p class="signature-prefix font-editorial" id="signature-prefix">With gratitude,</p>
+      <h3 class="signature-name" id="signature-name">অনির্বাণ ও দ্বাদশ শ্রেণীর শিক্ষার্থীবৃন্দ</h3>
+      <div class="signature-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 70" fill="none" class="signature-svg signature-handwriting-svg" aria-hidden="true">
+          <path class="sig-path" d="M15 45 C 35 15, 45 10, 60 30 C 70 45, 80 50, 95 35 C 110 20, 115 15, 125 38 C 130 50, 140 52, 155 35 C 170 18, 185 22, 195 42 C 205 60, 220 55, 245 40" stroke="var(--color-maroon)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <path class="sig-line" d="M10 58 C 70 54, 150 56, 250 52" stroke="var(--color-gold)" stroke-width="1.2" stroke-linecap="round" opacity="0.8" />
+          <circle cx="253" cy="52" r="2" fill="var(--color-gold)" />
+        </svg>
+        <img src="assets/decorations/fountain-pen.svg" id="fountain-pen" class="fountain-pen" alt="Fountain Pen" aria-hidden="true" />
+      </div>
+      <p class="signature-role" id="signature-role">Your Students • আপনার চিরকৃতজ্ঞ ছাত্রছাত্রী</p>
+    </section>
+
+    <!-- 9. FINAL GREETING & INTERACTIVE BLESSING ACTIONS -->
+    <section class="final-greeting-section" id="final-greeting">
+      <!-- Animated Opening Book of Wisdom -->
+      <div class="open-book-wrap" id="open-book-wrap" role="button" tabindex="0" title="Click to unfold wisdom petals" aria-label="Interactive Book of Wisdom">
+        <svg class="open-book-svg" viewBox="0 0 160 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bookCoverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#5A1E29" />
+              <stop offset="50%" stop-color="#7A3040" />
+              <stop offset="100%" stop-color="#42141D" />
+            </linearGradient>
+            <linearGradient id="pageGradLeft" x1="100%" y1="50%" x2="0%" y2="50%">
+              <stop offset="0%" stop-color="#EFE6D8" />
+              <stop offset="25%" stop-color="#FFFDF9" />
+              <stop offset="100%" stop-color="#F7F1E6" />
+            </linearGradient>
+            <linearGradient id="pageGradRight" x1="0%" y1="50%" x2="100%" y2="50%">
+              <stop offset="0%" stop-color="#EFE6D8" />
+              <stop offset="25%" stop-color="#FFFDF9" />
+              <stop offset="100%" stop-color="#F7F1E6" />
+            </linearGradient>
+            <linearGradient id="sproutGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="#C9A45C" />
+              <stop offset="100%" stop-color="#ECD28F" />
+            </linearGradient>
+            <filter id="bookShadow" x="-25%" y="-20%" width="150%" height="150%">
+              <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#7A3040" flood-opacity="0.14" />
+            </filter>
+          </defs>
+
+          <!-- Book Body and Pages -->
+          <g class="book-inner-group" filter="url(#bookShadow)">
+            <path class="book-cover-left" d="M80 82 C55 80 28 76 10 82 L12 28 C30 22 55 26 80 29 Z" fill="url(#bookCoverGrad)" />
+            <path class="book-cover-right" d="M80 82 C105 80 132 76 150 82 L148 28 C130 22 105 26 80 29 Z" fill="url(#bookCoverGrad)" />
+            <path d="M78 29 C80 28 82 28 84 29 L84 83 C82 82 80 82 78 83 Z" fill="#3D121A" />
+            <line x1="81" y1="28.5" x2="81" y2="82.5" stroke="#C9A45C" stroke-width="1.2" />
+            <path class="page-left-bg" d="M80 80 C56 78 30 74 14 79 L16 26 C32 21 56 25 80 27 Z" fill="#EAE0CD" />
+            
+            <!-- Left Wing -->
+            <g class="page-left-wing">
+              <path class="page-left-sheet" d="M80 79 C57 77 32 72 16 77 L18 24 C34 19 57 23 80 25 Z" fill="url(#pageGradLeft)" stroke="#E0D5BE" stroke-width="0.5" />
+              <line x1="30" y1="36" x2="68" y2="38.5" stroke="#C9A45C" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.65" />
+              <line x1="28" y1="45" x2="68" y2="47.5" stroke="#7A3040" stroke-width="0.7" opacity="0.35" />
+              <line x1="28" y1="54" x2="65" y2="56.5" stroke="#7A3040" stroke-width="0.7" opacity="0.35" />
+              <line x1="32" y1="63" x2="60" y2="65.5" stroke="#7A3040" stroke-width="0.7" opacity="0.35" />
+            </g>
+
+            <!-- Right Wing -->
+            <g class="page-right-wing">
+              <path class="page-right-sheet" d="M80 79 C103 77 128 72 144 77 L142 24 C126 19 103 23 80 25 Z" fill="url(#pageGradRight)" stroke="#E0D5BE" stroke-width="0.5" />
+              <line x1="92" y1="38.5" x2="130" y2="36" stroke="#C9A45C" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.65" />
+              <line x1="92" y1="47.5" x2="132" y2="45" stroke="#7A3040" stroke-width="0.7" opacity="0.35" />
+              <line x1="95" y1="56.5" x2="132" y2="54" stroke="#7A3040" stroke-width="0.7" opacity="0.35" />
+              <line x1="100" y1="65.5" x2="128" y2="63" stroke="#7A3040" stroke-width="0.7" opacity="0.35" />
+            </g>
+
+            <path class="book-ribbon" d="M80 27 C84 38 88 52 92 68 L86 64 L80 70 Z" fill="url(#sproutGrad)" />
+
+            <!-- Sprouting Knowledge Leaves -->
+            <g class="book-sprout" id="book-sprout">
+              <path d="M81 26 C81 18 75 12 69 8 C71 14 76 19 81 26 Z" fill="#A8B89A" />
+              <path d="M81 26 C81 17 87 11 93 7 C91 13 86 18 81 26 Z" fill="#A8B89A" />
+              <circle cx="81" cy="6" r="2.5" fill="url(#sproutGrad)" />
+              <circle cx="81" cy="6" r="5" fill="#C9A45C" opacity="0.25" />
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <h2 class="final-title font-editorial" id="final-title">Happy Teachers' Day</h2>
+      <h3 class="final-teacher-name font-bengali-title" id="final-teacher-name">ডঃ অনিন্দিতা সেন</h3>
+      <p class="final-emotional-line" id="final-emotional-line">আপনি সবসময় আমাদের অনুপ্রেরণা হয়ে থাকবেন।</p>
+
+      <!-- Interactive Blessing Flower Button -->
+      <div class="blessing-action-wrap">
+        <button id="petal-blessing-btn" class="btn-blessing magnetic-btn" aria-label="পুষ্পার্ঘ্য অর্পণ করুন">
+          <span class="blessing-icon">🌸</span>
+          <span class="blessing-text">শ্রদ্ধার পুষ্পার্ঘ্য অর্পণ করুন</span>
+          <span class="blessing-sparkle">✨</span>
+        </button>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="final-actions">
+        <button id="replay-btn" class="btn-primary magnetic-btn" aria-label="Replay opening experience">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+            <path d="M3 3v5h5"></path>
+          </svg>
+          <span id="replay-btn-text">Replay Memory</span>
+        </button>
+
+        <button class="btn-secondary btn-open-share magnetic-btn" id="open-share-btn" aria-label="Share this tribute">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          <span id="share-btn-text">Share Tribute</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 10. CREATOR FOOTER & BRANDING -->
+    <footer class="creator-footer-section" id="creator-section">
+      <div class="creator-divider" aria-hidden="true"></div>
+
+      <div class="creator-info-card tilt-card" data-tilt-max="5">
+        <div class="card-glare" aria-hidden="true"></div>
+        <p class="creator-caption">Crafted with <span class="heart-pulse">❤️</span> by</p>
+        <h4 class="creator-name font-editorial">Kinjal Debnath</h4>
+        <a href="https://wa.me/916297418445" target="_blank" rel="noopener noreferrer" class="creator-contact-link" aria-label="Chat with Kinjal Debnath on WhatsApp">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+          </svg>
+          <span>WhatsApp: <strong>6297418445</strong></span>
+        </a>
+      </div>
+
+      <div class="creator-order-wrap">
+        <a href="https://wa.me/916297418445?text=Hello%20Kinjal%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%86%E0%A6%AE%E0%A6%BE%E0%A6%B0%20Teacher-%E0%A6%8F%E0%A6%B0%20%E0%A6%9C%E0%A6%A8%E0%A7%8D%E0%A6%AF%20%E0%A6%8F%E0%A6%95%E0%A6%9F%E0%A6%BF%20Digital%20Teachers%E2%80%99%20Day%20Tribute%20Website%20%E0%A6%AC%E0%A6%BE%E0%A6%A8%E0%A6%BE%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A7%A4%20%E2%82%B999%20Teacher%20Tribute%20package%20%E0%A6%B8%E0%A6%AE%E0%A7%8D%E0%A6%AA%E0%A6%B0%E0%A7%8D%E0%A6%95%E0%A7%87%20%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A7%A4"
+          target="_blank" rel="noopener noreferrer" class="btn-creator-order magnetic-btn" id="creator-order-btn" aria-label="Order Teacher Tribute Website on WhatsApp">
+          <span class="btn-order-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+            </svg>
+          </span>
+          <span class="btn-order-text">এই রকম Tribute বানাতে অর্ডার করুন</span>
+          <span class="btn-order-badge">₹99</span>
+        </a>
+      </div>
+
+      <p class="creator-copyright">© Kinjal Debnath • All Rights Reserved</p>
+    </footer>
+
+    <!-- Persistent Subtle Protection Watermark -->
+    <div class="persistent-watermark" aria-hidden="true">Kinjal Debnath • 6297418445</div>
+
+  </main>
+
+  <!-- ============================================================
+       FLOATING CONTROLS & MODALS
+       ============================================================ -->
+
+  <!-- Floating Audio Widget (Fallback / Secondary) -->
+  <aside class="floating-music-widget" id="music-widget" aria-label="Audio Controls">
+    <button class="music-toggle-btn" id="music-toggle" aria-label="Play background music">
+      <span id="music-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polygon points="6 3 20 12 6 21 6 3"></polygon>
+        </svg>
+      </span>
+    </button>
+    <div class="music-bars" id="music-bars" aria-hidden="true">
+      <div class="music-bar"></div>
+      <div class="music-bar"></div>
+      <div class="music-bar"></div>
+      <div class="music-bar"></div>
+    </div>
+    <span class="music-label">Melody</span>
+  </aside>
+
+  <!-- Share Modal Drawer -->
+  <div class="share-modal-overlay" id="share-modal-overlay" role="dialog" aria-modal="true" aria-label="Share Tribute">
+    <div class="share-modal">
+      <div class="share-modal-header">
+        <h3 class="share-modal-title">শ্রদ্ধার্ঘ্যটি শেয়ার করুন</h3>
+        <button class="share-close-btn" id="share-close-btn" aria-label="Close share drawer">✕</button>
+      </div>
+      <div class="share-options-grid">
+        <button class="share-btn-item share-whatsapp" id="share-btn-whatsapp">
+          <div class="share-btn-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+            </svg>
+          </div>
+          <span class="share-btn-label">WhatsApp</span>
+        </button>
+
+        <button class="share-btn-item share-native" id="share-btn-native">
+          <div class="share-btn-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+              <polyline points="16 6 12 2 8 6"></polyline>
+              <line x1="12" y1="2" x2="12" y2="15"></line>
+            </svg>
+          </div>
+          <span class="share-btn-label">Share...</span>
+        </button>
+
+        <button class="share-btn-item share-copy" id="share-btn-copy">
+          <div class="share-btn-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </div>
+          <span class="share-btn-label">Copy Link</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-overlay" id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image Preview">
+    <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close image preview">✕</button>
+    <div class="lightbox-image-wrap">
+      <img id="lightbox-img" src="" alt="Enlarged Memory Photo" />
+    </div>
+    <div class="lightbox-caption">
+      <h4 class="lightbox-title" id="lightbox-title"></h4>
+      <p class="lightbox-desc" id="lightbox-desc"></p>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast-notification" role="status" aria-live="polite"></div>
+
+  <!-- ============================================================
+       SCRIPTS & MODULES
+       ============================================================ -->
+  <!-- GSAP & Animation Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
+  <!-- Swiper Carousel -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Application Logic & Engine -->
+  <script src="config.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
